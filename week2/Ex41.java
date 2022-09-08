@@ -9,13 +9,16 @@ public class Ex41 {
         int randomNumber = random.nextInt(100 - 0 + 1) + 0;
         Scanner reader = new Scanner(System.in);
         System.out.println("Guess a number: ");
-        int numberGuessed = Integer.parseInt(reader.nextLine());
-        if (numberGuessed > randomNumber) {
-            System.out.println("The number is lesser");
-        } else if (numberGuessed < randomNumber) {
-            System.out.println("The number is greater");
-        } else {
-            System.out.println("Congratulations, your guess is correct!");
+        while (true) {
+            int numberGuessed = Integer.parseInt(reader.nextLine());
+            if (numberGuessed > randomNumber) {
+                System.out.println("The number is lesser");
+            } else if (numberGuessed < randomNumber) {
+                System.out.println("The number is greater");
+            } else {
+                System.out.println("Congratulations, your guess is correct!");
+                break;
+            }
         }
     }
 }
