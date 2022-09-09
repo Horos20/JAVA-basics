@@ -2,20 +2,30 @@ package week4;
 
 public class Ex72 {
     public static void main(String[] args) {
-        Account mattAccount = new Account("Matt's account: ",1000);
-        Account myAccount = new Account("My account: ",0);
+        Account accountA = new Account("Account A: ",100);
+        Account accountB = new Account("Account B: ",0);
+        Account accountC = new Account("Account C: ",0);
 
         System.out.println("Initial state");
-        System.out.println(mattAccount);
-        System.out.println(myAccount);
+        System.out.println(accountA);
+        System.out.println(accountB);
+        System.out.println(accountC);
 
-        mattAccount.withdrawal(100);
-        System.out.println("Matt's account balance is now: "+mattAccount.balance());
-        myAccount.deposit(100);
-        System.out.println("My account balance is now: "+myAccount.balance());
+        transfer(accountA, accountB, 50);
+        System.out.println("First transfer");
+        System.out.println(accountA);
+        System.out.println(accountB);
+        System.out.println(accountC);
 
-        System.out.println("Final state");
-        System.out.println(mattAccount);
-        System.out.println(myAccount);
+        transfer(accountB, accountC, 25);
+        System.out.println("Second transfer");
+        System.out.println(accountA);
+        System.out.println(accountB);
+        System.out.println(accountC);
+    }
+
+    public static void transfer(Account from, Account to, double amount) {
+        from.withdrawal(amount);
+        to.deposit(amount);
     }
 }
