@@ -10,6 +10,6 @@ public class Product {
         this.amountAtStart = amountAtStart;
     }
     public void printProduct() {
-        System.out.println(nameAtStart + ", price " + priceAtStart + ", amount " + amountAtStart);
+        System.out.println(this.nameAtStart + ", price " + this.priceAtStart + ", amount " + this.amountAtStart);
     }
 }
