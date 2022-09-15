@@ -2,11 +2,8 @@ package week7;
 
 public class Calculator {
 
+    private int calculations = 0;
     Reader reader = new Reader();
-
-    public Calculator(Reader reader) {
-        this.reader = reader;
-    }
 
     public void start() {
         while (true) {
@@ -18,10 +15,13 @@ public class Calculator {
 
             if (command.equals("sum")) {
                 sum();
+                calculations++;
             } else if (command.equals("difference")) {
                 difference();
+                calculations++;
             } else if (command.equals("product")) {
                 product();
+                calculations++;
             }
         }
 
@@ -53,7 +53,7 @@ public class Calculator {
     }
 
     private void statistics() {
-
+        System.out.println("Calculations done: " + calculations);
     }
 
 }
