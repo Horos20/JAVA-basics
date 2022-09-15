@@ -24,12 +24,10 @@ public class Library {
 
         // iterate the list of books and add all the matching books to the list found
         for (Book book: this.books) {
-            if (book.title().contains(title.trim())) {
+            if(StringUtils.included(book.title(), title)) {
                 found.add(book);
-                return found;
             }
         }
-
         return found;
     }
 
@@ -38,9 +36,8 @@ public class Library {
 
         // iterate the list of books and add all the matching books to the list found
         for (Book book: this.books) {
-            if (book.publisher().contains(publisher.trim())) {
+            if(StringUtils.included(book.publisher(), publisher)) {
                 found.add(book);
-                return found;
             }
         }
 
@@ -55,7 +52,6 @@ public class Library {
         for (Book book: this.books) {
             if (book.year() == year) {
                 found.add(book);
-                return found;
             }
         }
 
