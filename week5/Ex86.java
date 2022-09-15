@@ -1,16 +1,18 @@
 package week5;
 
 public class Ex86 {
-        public static void main(String[] args) {
-            LyyraCard cardOfPekka = new LyyraCard(10);
+    public static void main(String[] args) {
+        CashRegister unicafeExactum = new CashRegister();
 
-            System.out.println("money on the card " + cardOfPekka.balance() );
-            boolean succeeded = cardOfPekka.pay(8);
-            System.out.println("money taken: " + succeeded );
-            System.out.println("money on the card " + cardOfPekka.balance() );
+        double theChange = unicafeExactum.payEconomical(10);
+        System.out.println("the change was " + theChange );
 
-            succeeded = cardOfPekka.pay(4);
-            System.out.println("money taken: " + succeeded );
-            System.out.println("money on the card " + cardOfPekka.balance() );
-        }
+        theChange = unicafeExactum.payEconomical(5);
+        System.out.println("the change was "  + theChange );
+
+        theChange = unicafeExactum.payGourmet(4);
+        System.out.println("the change was "  + theChange );
+
+        System.out.println( unicafeExactum );
+    }
 }
