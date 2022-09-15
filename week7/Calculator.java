@@ -29,15 +29,27 @@ public class Calculator {
     }
 
     private void sum() {
-
+        System.out.print("value1: ");
+        int value1 = reader.readInteger();
+        System.out.print("value2: ");
+        int value2 = reader.readInteger();
+        System.out.println("Sum of the values: " + (value1 + value2));
     }
 
     private void difference() {
-
+        System.out.print("value1: ");
+        int value1 = reader.readInteger();
+        System.out.print("value2: ");
+        int value2 = reader.readInteger();
+        System.out.println("Sum of the values: " + (value1 - value2));
     }
 
     private void product() {
-
+        System.out.print("value1: ");
+        int value1 = reader.readInteger();
+        System.out.print("value2: ");
+        int value2 = reader.readInteger();
+        System.out.println("Sum of the values: " + (value1 * value2));
     }
 
     private void statistics() {
