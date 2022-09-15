@@ -3,18 +3,21 @@ package week5;
 public class Ex86 {
     public static void main(String[] args) {
         CashRegister unicafeExactum = new CashRegister();
+        System.out.println( unicafeExactum );
 
-        double theChange = unicafeExactum.payEconomical(10);
-        System.out.println("the change was " + theChange );
+        LyyraCard cardOfJim = new LyyraCard(2);
 
-        LyyraCard cardOfJim = new LyyraCard(7);
+        System.out.println("the card balance " + cardOfJim.balance() + " euros");
 
         boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
         System.out.println("payment success: " + succeeded);
+
+        unicafeExactum.loadMoneyToCard(cardOfJim, 100);
+
         succeeded = unicafeExactum.payGourmet(cardOfJim);
         System.out.println("payment success: " + succeeded);
-        succeeded = unicafeExactum.payEconomical(cardOfJim);
-        System.out.println("payment success: " + succeeded);
+
+        System.out.println("the card balance " + cardOfJim.balance() + " euros");
 
         System.out.println( unicafeExactum );
     }
