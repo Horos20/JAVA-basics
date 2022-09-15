@@ -44,6 +44,38 @@ public class CashRegister {
         // if not enough money is given, all is returned and nothing else happens
     }
 
+    public boolean payEconomical(LyyraCard card) {
+        double economicalLunch = 2.5;
+        if (card.balance() >= economicalLunch) {
+            card.pay(economicalLunch);
+            economicalSold++;
+            return true;
+        } else {
+            return false;
+        }
+        // the price of the economical lunch is 2.50 euros
+        // if the balance of the card is at least the price of the lunch:
+        //    the amount of sold lunches is incremented by one
+        //    the method returns true
+        // if not, the method returns false
+    }
+
+    public boolean payGourmet(LyyraCard card) {
+        double gourmetlLunch = 4.0;
+        if (card.balance() >= gourmetlLunch) {
+            card.pay(gourmetlLunch);
+            gourmetSold++;
+            return true;
+        } else {
+            return false;
+        }
+        // the price of the gourmet lunch is 4.00 euros
+        // if the balance of the card is at least the price of the lunch:
+        //    the amount of sold lunches is incremented by one
+        //    the method returns true
+        // if not, the method returns false
+    }
+
     public String toString() {
         return "money in register "+cashInRegister+" economical lunches sold: "+economicalSold+" gourmet lunches sold: "+gourmetSold;
     }
