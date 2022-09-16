@@ -14,11 +14,20 @@ public class GuessingGame {
         instructions(upperLimit, lowerLimit);
 
         // write the game logic here
+        while (lowerLimit != upperLimit) {
+            int average = average(lowerLimit, upperLimit);
+            if (isGreaterThan(average)) {
+                lowerLimit = average + 1;
+            } else {
+                upperLimit = average;
+            }
+        }
+        System.out.println("The number you're thinking of is " + lowerLimit + " .");
     }
 
     // implement here the methods isGreaterThan and average
     public boolean isGreaterThan(int value) {
-        System.out.println("Is your number greater than given value? (y/n)");
+        System.out.println("Is your number greater than " + value + "(y/n)");
         String answer = reader.nextLine();
         if (answer.trim().equals("y")) {
             return true;
