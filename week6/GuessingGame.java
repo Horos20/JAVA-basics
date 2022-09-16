@@ -27,6 +27,10 @@ public class GuessingGame {
         }
     }
 
+    public int average(int firstNumber, int secondNumber) {
+        return (firstNumber + secondNumber) / 2;
+    }
+
     public void instructions(int lowerLimit, int upperLimit) {
         int maxQuestions = howManyTimesHalvable(upperLimit - lowerLimit);
 
