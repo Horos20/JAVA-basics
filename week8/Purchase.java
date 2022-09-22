@@ -21,9 +21,6 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "Purchase{" +
-                "product='" + product + '\'' +
-                ", amount=" + amount +
-                '}';
+        return product + ": " + amount;
     }
 }
