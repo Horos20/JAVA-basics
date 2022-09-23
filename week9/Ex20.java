@@ -1,5 +1,6 @@
 package week9;
 
+import week9.application.AverageSensor;
 import week9.application.Sensor;
 import week9.application.Thermometer;
 
@@ -8,7 +9,16 @@ public class Ex20 {
         Sensor kumpula = new Thermometer();
         kumpula.on();
         System.out.println("the temperature in Kumpula is "+kumpula.measure() + " degrees");
-        kumpula.off();
-        System.out.println("the temperature in Kumpula is "+kumpula.measure() + " degrees");
+
+        Sensor kaisaniemi = new Thermometer();
+        Sensor helsinkiVantaa = new Thermometer();
+
+        AverageSensor helsinkiArea = new AverageSensor();
+        helsinkiArea.addSensor(kumpula);
+        helsinkiArea.addSensor(kaisaniemi);
+        helsinkiArea.addSensor(helsinkiVantaa);
+
+        helsinkiArea.on();
+        System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
     }
 }
