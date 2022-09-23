@@ -18,7 +18,7 @@ public class ConstantSensor implements Sensor {
     }
 
     @Override
-    public void off() throws IllegalStateException {
+    public void off() {
 
     }
 
